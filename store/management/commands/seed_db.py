@@ -16,5 +16,5 @@ class Command(BaseCommand):
         sql = Path(seed_file_path).read_text()
 
         with connection.cursor() as cursor:
-            cursor.executescript(sql)
+            cursor.execute(sql)
         print('Done.')
