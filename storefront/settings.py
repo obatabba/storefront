@@ -180,3 +180,5 @@ DEFAULT_FROM_EMAIL = 'from@storefront.com'
 ADMINS = [
     ('Obada', 'admin@storefront.com')
 ]
+
+CELERY_BROKER_URL = 'redis://localhost:6600/1'
