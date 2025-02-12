@@ -9,7 +9,7 @@ from store.models import Collection
 @pytest.fixture
 def create_collection(api_client):
     def perform_create(data):
-        return api_client.post('/store/collections/', data)
+        return api_client.post(reverse('collection-list'), data)
     return perform_create
 
 
