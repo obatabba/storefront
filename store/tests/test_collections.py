@@ -50,6 +50,7 @@ class TestCreateCollection:
 
     def test_if_data_is_invalid_returns_400(self, authenticated_client, create_collection):
         authenticated_client(is_staff=True)
+
         response = create_collection(data={'title': ''})
 
         assert response.status_code == status.HTTP_400_BAD_REQUEST
@@ -58,6 +59,7 @@ class TestCreateCollection:
 
     def test_if_data_is_valid_returns_201(self, authenticated_client, create_collection):
         authenticated_client(is_staff=True)
+        
         response = create_collection(data={'title': 'a'})
 
         assert response.status_code == status.HTTP_201_CREATED
@@ -65,7 +67,7 @@ class TestCreateCollection:
 
 
 @pytest.mark.django_db
-class TestRetireveCollection:
+class TestRetrieveCollection:
 
     def test_if_collection_does_not_exists_returns_404(self, api_client):
         response = api_client.get(reverse('collection-detail', kwargs={'pk': 0}))
