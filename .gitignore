@@ -5,3 +5,4 @@ db.sqlite3
 /static/
 /playground/static/images
 celerybeat-schedule
+general.log
